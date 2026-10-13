@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BurgerHub</title>
+  <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <link rel="icon" href="./icon/32382hamburger_98925.ico">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+      <nav>
+        <div class="logo">
+          <h1>Burger <span>Hub</span></h1>
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reservations">Reservations</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="marwan()">☰</div>
+      </nav>
+
+<section id="home" class="home">
+  <div class="hero-content">
+    <h1>Welcome to Burger Marwan</h1>
+    <p>Experience the Taste of Perfection</p>
+    <a href="#menu" class="btn">Explore Our Menu</a>
+  </div>
+</section>
+
+<section id="about" class="about dark-theme">
+  <div class="about-content">
+    <h2>About Burger Hut</h2>
+    <p>Experience the finest gourmet burgers in a cozy and rustic atmosphere. At Berger Hut, we are dedicated to delivering exceptional flavors that will tantalize your taste buds.</p>
+    <p>Our chefs meticulously craft each burger using locally sourced ingredients and unique flavor combinations. From juicy beef patties to mouthwatering vegetarian options, there's something for everyone.</p>
+    <a href="#menu" class="btn">Explore Our Menu</a>
+  </div>
+  <div class="about-image">
+    <img src="./image/about-image.jpg" alt="About Image">
+  </div>
+</section>
+
+
+<section id="menu" class="menu">
+  <h2>Our Menu</h2>
+  <div class="menu-items">
+    <div class="menu-item">
+      <img src="./image/burger1.jpg" alt="Burger 1">
+      <h3>Classic Cheeseburger</h3>
+      <p>A juicy beef patty topped with melted cheese, fresh lettuce, tomato, and our special sauce. Served with a side of crispy fries.</p>
+    </div>
+    <div class="menu-item">
+      <img src="./image/burger2.jpg" alt="Burger 2">
+      <h3>Veggie Delight</h3>
+      <p>A delicious veggie patty made from a blend of fresh vegetables and spices. Topped with avocado, sprouts, and tangy mayo. Served with a side of sweet potato fries.</p>
+    </div>
+    <div class="menu-item">
+      <img src="./image/burger3.jpg" alt="Burger 3">
+      <h3>Spicy BBQ Burger</h3>
+      <p>A fiery burger packed with flavor! Grilled chicken breast smothered in spicy BBQ sauce, topped with jalapenos, crispy onion rings, and chipotle mayo. Served with a side of coleslaw.</p>
+    </div>
+  </div>
+</section>
+
+<section id="reservations" class="reservations">
+  <div class="reservation-form">
+    <h2>Make a Reservation</h2>
+    <form>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="date" name="date" required>
+      <input type="time" name="time" required>
+      <textarea name="message" placeholder="Additional Message" rows="5"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
+
+<section id="testimonials" class="testimonials">
+  <h2>What Our Customers Say</h2>
+  <div class="testimonial">
+    <img src="./image/Leonardo_Phoenix_A_middleaged_adult_with_a_relaxed_expression_2.jpg" alt="Customer 1">
+    <p>"The burgers at Berger Marwan are simply amazing! The flavors are rich, and the ingredients are always fresh. It's my go-to place whenever I'm craving a delicious meal."</p>
+    <h4>Ethan</h4>
+  </div>
+  <div class="testimonial">
+    <img src="./image/Leonardo_Phoenix_Two_customers_a_man_and_a_woman_sitting_acros_2.jpg" alt="Customer 2">
+    <p>"Berger Marwan never disappoints! The quality of their burgers and the friendly service make it a top-notch dining experience. I highly recommend it to all burger lovers!"</p>
+    <h4>Lucas and Isabelle</h4>
+  </div>
+</section>
+
+
+
+
+<section id="gallery" class="gallery">
+  <h2>Gallery</h2>
+  <div class="image-grid">
+    <div class="image-item">
+      <img src="./image/Leonardo_Phoenix_Capture_a_series_of_photographs_showcasing_th_0.jpg" alt="Image 1">
+    </div>
+    <div class="image-item">
+      <img src="./image/Leonardo_Phoenix_Capture_a_series_of_photographs_showcasing_th_1.jpg" alt="Image 2">
+    </div>
+    <div class="image-item">
+      <img src="./image/Leonardo_Phoenix_Capture_a_series_of_photographs_showcasing_th_2.jpg" alt="Image 3">
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+      <h2>Contact Us</h2>
+  <div class="contact-container">
+    <div class="contact-info">
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>rue de larache; mdina l9dima</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-phone-alt"></i>
+        <p>0617122176</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <p>m.lyakidi1937@gmail.com</p>
+      </div>
+    </div>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+
+
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="./icon/Leonardo_Phoenix_Create_a_vibrant_logo_for_Marwan_Burger_Resta_2-removebg-preview (1).png" alt="Logo">
+    </div>
+    
+    <div class="radio">
+      <input value="1" name="rating" type="radio" id="rating-1" />
+      <label title="1 stars" for="rating-1">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+          <path
+            d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+          ></path>
+        </svg>
+      </label>
+    
+      <input value="2" name="rating" type="radio" id="rating-2" />
+      <label title="2 stars" for="rating-2">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+          <path
+            d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+          ></path>
+        </svg>
+      </label>
+    
+      <input value="3" name="rating" type="radio" id="rating-3" />
+      <label title="3 stars" for="rating-3">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+          <path
+            d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+          ></path>
+        </svg>
+      </label>
+    
+      <input value="4" name="rating" type="radio" id="rating-4" />
+      <label title="4 stars" for="rating-4">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+          <path
+            d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+          ></path>
+        </svg>
+      </label>
+    
+      <input value="5" name="rating" type="radio" id="rating-5" />
+      <label title="5 star" for="rating-5">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+          <path
+            d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+          ></path>
+        </svg>
+      </label>
+    </div>
+    
+
+
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+  <p class="footer-text">&copy; 2023 Berger Marwan. All rights reserved.</p>
+</footer>
+<script src="javascript/script.js"></script>
+
+
+</body>
+</html>
