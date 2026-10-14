@@ -1,213 +1,501 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BurgerHub</title>
-  <link rel="stylesheet" type="text/css" href="./css/styles.css">
-  <link rel="icon" href="./icon/32382hamburger_98925.ico">
-  <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="description" content="BurgerHub — Premium gourmet burgers crafted with passion. Book a table or explore our signature menu.">
+  <title>BurgerHub — Taste the Perfection</title>
+
+  <link rel="icon" href="./icon/icon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/cart.css">
 </head>
 
-      <nav>
-        <div class="logo">
-          <h1>Burger <span>Hub</span></h1>
+<body>
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav id="navbar">
+    <a href="#home" class="logo">
+      <span class="logo-mark"><i class="fa-solid fa-burger"></i></span>
+      <h1>Burger<span>Hub</span></h1>
+    </a>
+
+    <ul id="navMenu">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#menu" class="nav-link">Menu</a></li>
+      <li><a href="#reservations" class="nav-link">Reservations</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count" id="cartCount" hidden>0</span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+        <i class="fa-solid fa-sun"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-glow"></div>
+
+    <div class="hero-content">
+      <span class="hero-tag">
+        <i class="fa-solid fa-star"></i> Premium Gourmet Burgers
+      </span>
+      <h1>Welcome to <span class="gradient-text">BurgerHub</span></h1>
+      <p>Handcrafted burgers, locally sourced ingredients, and flavors that linger long after the last bite.</p>
+
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">
+          Explore Menu <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#reservations" class="btn btn-ghost">Book a Table</a>
+      </div>
+
+      <div class="hero-stats">
+        <div><strong>50+</strong><span>Menu Items</span></div>
+        <div class="divider"></div>
+        <div><strong>12k+</strong><span>Happy Clients</span></div>
+        <div class="divider"></div>
+        <div><strong>4.9</strong><span>Average Rating</span></div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down"><span></span></a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="about">
+    <div class="about-image reveal">
+      <img src="./image/about.jpg" alt="Inside BurgerHub restaurant">
+      <div class="about-badge">
+        <strong>10+</strong>
+        <span>Years of Taste</span>
+      </div>
+    </div>
+
+    <div class="about-content reveal">
+      <span class="section-tag">Our Story</span>
+      <h2>Crafted with <span class="gradient-text">Passion</span></h2>
+      <p>
+        Experience the finest gourmet burgers in a cozy, rustic atmosphere. At BurgerHub we are dedicated
+        to delivering exceptional flavors that will tantalize your taste buds.
+      </p>
+      <p>
+        Our chefs meticulously craft each burger using locally sourced ingredients and unique flavor
+        combinations — from juicy beef patties to mouthwatering vegetarian options, there's something
+        for everyone.
+      </p>
+
+      <ul class="about-features">
+        <li><i class="fa-solid fa-leaf"></i> Fresh Local Ingredients</li>
+        <li><i class="fa-solid fa-fire"></i> Flame-Grilled Daily</li>
+        <li><i class="fa-solid fa-award"></i> Award-Winning Recipes</li>
+      </ul>
+
+      <a href="#menu" class="btn btn-primary">Explore Our Menu <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <section id="menu" class="menu">
+    <div class="section-header reveal">
+      <span class="section-tag center">Our Menu</span>
+      <h2>Signature <span class="gradient-text">Burgers</span></h2>
+      <p>Every burger is a masterpiece — grilled to order, stacked with care.</p>
+    </div>
+
+    <div class="menu-items">
+
+      <article class="menu-item reveal">
+        <div class="menu-image">
+          <img src="./image/burger1.jpg" alt="Classic Cheeseburger">
+          <span class="menu-price">$9.99</span>
         </div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#reservations">Reservations</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+        <div class="menu-body">
+          <h3>Classic Cheeseburger</h3>
+          <p>A juicy beef patty topped with melted cheese, fresh lettuce, tomato, and our special sauce. Served with crispy fries.</p>
+          <button class="btn-order"
+                  data-id="burger1"
+                  data-name="Classic Cheeseburger"
+                  data-price="9.99"
+                  data-image="./image/burger1.jpg">
+            Add to Cart <i class="fa-solid fa-cart-plus"></i>
+          </button>
+        </div>
+      </article>
+
+      <article class="menu-item featured reveal">
+        <div class="menu-image">
+          <img src="./image/burger2.jpg" alt="Veggie Delight">
+          <span class="menu-price">$8.99</span>
+          <span class="badge">Popular</span>
+        </div>
+        <div class="menu-body">
+          <h3>Veggie Delight</h3>
+          <p>A delicious veggie patty made from a blend of fresh vegetables and spices, topped with avocado, sprouts, and tangy mayo.</p>
+          <button class="btn-order"
+                  data-id="burger2"
+                  data-name="Veggie Delight"
+                  data-price="8.99"
+                  data-image="./image/burger2.jpg">
+            Add to Cart <i class="fa-solid fa-cart-plus"></i>
+          </button>
+        </div>
+      </article>
+
+      <article class="menu-item reveal">
+        <div class="menu-image">
+          <img src="./image/burger3.jpg" alt="Spicy BBQ Burger">
+          <span class="menu-price">$11.49</span>
+        </div>
+        <div class="menu-body">
+          <h3>Spicy BBQ Burger</h3>
+          <p>Grilled chicken breast smothered in spicy BBQ sauce, topped with jalapeños, crispy onion rings, and chipotle mayo.</p>
+          <button class="btn-order"
+                  data-id="burger3"
+                  data-name="Spicy BBQ Burger"
+                  data-price="11.49"
+                  data-image="./image/burger3.jpg">
+            Add to Cart <i class="fa-solid fa-cart-plus"></i>
+          </button>
+        </div>
+      </article>
+    </div>
+
+  </section>
+
+  <!-- ============ RESERVATIONS ============ -->
+  <section id="reservations" class="reservations">
+    <div class="reservation-wrapper">
+      <div class="reservation-info reveal">
+        <span class="section-tag">Reservations</span>
+        <h2>Book Your <span class="gradient-text">Table</span></h2>
+        <p>Reserve a spot and we'll have everything ready the moment you arrive. Walk-ins welcome, but a reservation guarantees your seat.</p>
+
+        <ul class="reservation-perks">
+          <li><i class="fa-solid fa-circle-check"></i> Instant confirmation</li>
+          <li><i class="fa-solid fa-circle-check"></i> Free cancellation up to 2h before</li>
+          <li><i class="fa-solid fa-circle-check"></i> Special requests welcome</li>
         </ul>
-        <div class="menu-toggle" onclick="marwan()">☰</div>
-      </nav>
 
-<section id="home" class="home">
-  <div class="hero-content">
-    <h1>Welcome to Burger Marwan</h1>
-    <p>Experience the Taste of Perfection</p>
-    <a href="#menu" class="btn">Explore Our Menu</a>
-  </div>
-</section>
+        <div class="reservation-hours">
+          <i class="fa-regular fa-clock"></i>
+          <div>
+            <strong>Open Daily</strong>
+            <span>11:00 AM — 11:00 PM</span>
+          </div>
+        </div>
+      </div>
 
-<section id="about" class="about dark-theme">
-  <div class="about-content">
-    <h2>About Burger Hut</h2>
-    <p>Experience the finest gourmet burgers in a cozy and rustic atmosphere. At Berger Hut, we are dedicated to delivering exceptional flavors that will tantalize your taste buds.</p>
-    <p>Our chefs meticulously craft each burger using locally sourced ingredients and unique flavor combinations. From juicy beef patties to mouthwatering vegetarian options, there's something for everyone.</p>
-    <a href="#menu" class="btn">Explore Our Menu</a>
-  </div>
-  <div class="about-image">
-    <img src="./image/about-image.jpg" alt="About Image">
-  </div>
-</section>
+      <form class="reservation-form reveal">
+        <h3>Make a Reservation</h3>
 
+        <div class="field">
+          <i class="fa-regular fa-user"></i>
+          <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="field">
+          <i class="fa-regular fa-envelope"></i>
+          <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="field">
+          <i class="fa-solid fa-phone"></i>
+          <input type="tel" name="phone" placeholder="Phone Number" required>
+        </div>
 
-<section id="menu" class="menu">
-  <h2>Our Menu</h2>
-  <div class="menu-items">
-    <div class="menu-item">
-      <img src="./image/burger1.jpg" alt="Burger 1">
-      <h3>Classic Cheeseburger</h3>
-      <p>A juicy beef patty topped with melted cheese, fresh lettuce, tomato, and our special sauce. Served with a side of crispy fries.</p>
+        <div class="field-row">
+          <div class="field">
+            <i class="fa-regular fa-calendar"></i>
+            <input type="date" name="date" required>
+          </div>
+          <div class="field">
+            <i class="fa-regular fa-clock"></i>
+            <input type="time" name="time" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <i class="fa-regular fa-comment"></i>
+          <textarea name="message" placeholder="Additional Message" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">
+          Confirm Reservation <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
     </div>
-    <div class="menu-item">
-      <img src="./image/burger2.jpg" alt="Burger 2">
-      <h3>Veggie Delight</h3>
-      <p>A delicious veggie patty made from a blend of fresh vegetables and spices. Topped with avocado, sprouts, and tangy mayo. Served with a side of sweet potato fries.</p>
-    </div>
-    <div class="menu-item">
-      <img src="./image/burger3.jpg" alt="Burger 3">
-      <h3>Spicy BBQ Burger</h3>
-      <p>A fiery burger packed with flavor! Grilled chicken breast smothered in spicy BBQ sauce, topped with jalapenos, crispy onion rings, and chipotle mayo. Served with a side of coleslaw.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="reservations" class="reservations">
-  <div class="reservation-form">
-    <h2>Make a Reservation</h2>
-    <form>
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="tel" name="phone" placeholder="Phone Number" required>
-      <input type="date" name="date" required>
-      <input type="time" name="time" required>
-      <textarea name="message" placeholder="Additional Message" rows="5"></textarea>
-      <button type="submit">Submit</button>
+  <!-- ============ TESTIMONIALS ============ -->
+  <section id="testimonials" class="testimonials">
+    <div class="section-header reveal">
+      <span class="section-tag center">Testimonials</span>
+      <h2>What Our <span class="gradient-text">Customers</span> Say</h2>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial reveal">
+        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p>"The burgers at BurgerHub are simply amazing! The flavors are rich, and the ingredients are always fresh. It's my go-to place whenever I'm craving a delicious meal."</p>
+        <div class="testimonial-author">
+          <img src="./image/customer1.jpg" alt="Ethan">
+          <div>
+            <h4>Ethan</h4>
+            <span>Regular Customer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial reveal">
+        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p>"BurgerHub never disappoints! The quality of their burgers and the friendly service make it a top-notch dining experience. I highly recommend it to all burger lovers!"</p>
+        <div class="testimonial-author">
+          <img src="./image/customer2.jpg" alt="Lucas and Isabelle">
+          <div>
+            <h4>Lucas &amp; Isabelle</h4>
+            <span>Food Bloggers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section id="gallery" class="gallery">
+    <div class="section-header reveal">
+      <span class="section-tag center">Gallery</span>
+      <h2>A Feast for the <span class="gradient-text">Eyes</span></h2>
+    </div>
+
+    <div class="image-grid">
+      <div class="image-item reveal">
+        <img src="./image/gallery1.jfif" alt="Gallery image 1">
+      </div>
+      <div class="image-item reveal">
+        <img src="./image/gallery2.jfif" alt="Gallery image 2">
+      </div>
+      <div class="image-item reveal">
+        <img src="./image/gallery3.jfif" alt="Gallery image 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="contact">
+    <div class="section-header reveal">
+      <span class="section-tag center">Contact</span>
+      <h2>Get in <span class="gradient-text">Touch</span></h2>
+      <p>Questions, feedback, or a big order? We'd love to hear from you.</p>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-info reveal">
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>Visit Us</strong>
+            <p>Rue de Larache, Mdina L9dima</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone-alt"></i>
+          <div>
+            <strong>Call Us</strong>
+            <p>0617 122 176</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <strong>Email Us</strong>
+            <p>m.lyakidi1937@gmail.com</p>
+          </div>
+        </div>
+      </div>
+
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="field">
+        <i class="fa-regular fa-user"></i>
+        <input type="text" name="name" placeholder="Your Name" required minlength="2" maxlength="80">
+      </div>
+      <div class="field">
+        <i class="fa-regular fa-envelope"></i>
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="field">
+        <i class="fa-regular fa-tag"></i>
+        <input type="text" name="subject" placeholder="Subject (optional)" maxlength="120">
+      </div>
+      <div class="field">
+        <i class="fa-regular fa-comment"></i>
+        <textarea name="message" placeholder="Your Message" rows="5" required minlength="5" maxlength="1000"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">
+        Send Message <i class="fa-solid fa-paper-plane"></i>
+      </button>
     </form>
-  </div>
-</section>
-
-
-<section id="testimonials" class="testimonials">
-  <h2>What Our Customers Say</h2>
-  <div class="testimonial">
-    <img src="./image/Leonardo_Phoenix_A_middleaged_adult_with_a_relaxed_expression_2.jpg" alt="Customer 1">
-    <p>"The burgers at Berger Marwan are simply amazing! The flavors are rich, and the ingredients are always fresh. It's my go-to place whenever I'm craving a delicious meal."</p>
-    <h4>Ethan</h4>
-  </div>
-  <div class="testimonial">
-    <img src="./image/Leonardo_Phoenix_Two_customers_a_man_and_a_woman_sitting_acros_2.jpg" alt="Customer 2">
-    <p>"Berger Marwan never disappoints! The quality of their burgers and the friendly service make it a top-notch dining experience. I highly recommend it to all burger lovers!"</p>
-    <h4>Lucas and Isabelle</h4>
-  </div>
-</section>
-
-
-
-
-<section id="gallery" class="gallery">
-  <h2>Gallery</h2>
-  <div class="image-grid">
-    <div class="image-item">
-      <img src="./image/Leonardo_Phoenix_Capture_a_series_of_photographs_showcasing_th_0.jpg" alt="Image 1">
+    
     </div>
-    <div class="image-item">
-      <img src="./image/Leonardo_Phoenix_Capture_a_series_of_photographs_showcasing_th_1.jpg" alt="Image 2">
-    </div>
-    <div class="image-item">
-      <img src="./image/Leonardo_Phoenix_Capture_a_series_of_photographs_showcasing_th_2.jpg" alt="Image 3">
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact" class="contact">
-      <h2>Contact Us</h2>
-  <div class="contact-container">
-    <div class="contact-info">
-      <div class="info-item">
-        <i class="fas fa-map-marker-alt"></i>
-        <p>rue de larache; mdina l9dima</p>
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-content">
+
+      <div class="footer-rating">
+        <span>Rate your experience</span>
+        <div class="rating" role="radiogroup" aria-label="Rate your experience">
+          <input type="radio" name="rating" id="rating-5" value="5"><label for="rating-5" title="5 stars"><i class="fa-solid fa-star"></i></label>
+          <input type="radio" name="rating" id="rating-4" value="4"><label for="rating-4" title="4 stars"><i class="fa-solid fa-star"></i></label>
+          <input type="radio" name="rating" id="rating-3" value="3"><label for="rating-3" title="3 stars"><i class="fa-solid fa-star"></i></label>
+          <input type="radio" name="rating" id="rating-2" value="2"><label for="rating-2" title="2 stars"><i class="fa-solid fa-star"></i></label>
+          <input type="radio" name="rating" id="rating-1" value="1"><label for="rating-1" title="1 star"><i class="fa-solid fa-star"></i></label>
+        </div>
       </div>
-      <div class="info-item">
-        <i class="fas fa-phone-alt"></i>
-        <p>0617122176</p>
-      </div>
-      <div class="info-item">
-        <i class="fas fa-envelope"></i>
-        <p>m.lyakidi1937@gmail.com</p>
+
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
-    <form class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 BurgerHub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+
+
+  <!-- ============ CART DRAWER ============ -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-bag-shopping"></i> Your Order</h3>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">&times;</button>
+    </div>
+  
+    <div class="cart-body" id="cartBody">
+      <!-- Items injected by JS -->
+    </div>
+
+    <div class="cart-empty" id="cartEmpty">
+      <i class="fa-solid fa-burger"></i>
+      <p>Your cart is empty</p>
+      <a href="#menu" class="btn btn-primary" id="cartEmptyBtn">Browse Menu</a>
+    </div>
+
+    <div class="cart-footer" id="cartFooter" hidden>
+      <div class="cart-row"><span>Subtotal</span><span id="cartSubtotal">$0.00</span></div>
+      <div class="cart-row"><span>Delivery</span><span id="cartDelivery">$0.00</span></div>
+      <div class="cart-row"><span>Tax (10%)</span><span id="cartTax">$0.00</span></div>
+      <div class="cart-row cart-total"><span>Total</span><span id="cartTotal">$0.00</span></div>
+      <button class="btn btn-primary btn-full" id="checkoutBtn">
+        Checkout <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </aside>
+
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+
+  <!-- ============ CHECKOUT MODAL ============ -->
+  <div class="modal" id="checkoutModal" aria-hidden="true" role="dialog">
+    <div class="modal-content">
+      <button class="modal-close" id="checkoutClose" aria-label="Close">&times;</button>
+
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-receipt"></i> Complete Your Order</h3>
+        <p>Enter your details and we'll get cooking.</p>
+      </div>
+  
+      <form id="checkoutForm" novalidate>
+        <div class="field">
+          <i class="fa-regular fa-user"></i>
+          <input type="text"  name="name"    placeholder="Full Name"     required minlength="2">
+        </div>
+        <div class="field">
+          <i class="fa-regular fa-envelope"></i>
+          <input type="email" name="email"   placeholder="Email"         required>
+        </div>
+        <div class="field">
+          <i class="fa-solid fa-phone"></i>
+          <input type="tel"   name="phone"   placeholder="Phone Number"  required>
+        </div>
+        <div class="field">
+          <i class="fa-solid fa-location-dot"></i>
+          <input type="text"  name="address" placeholder="Delivery Address" required minlength="5">
+        </div>
+        <div class="field">
+          <i class="fa-regular fa-comment"></i>
+          <textarea name="notes" placeholder="Notes (optional)" rows="2" maxlength="300"></textarea>
+        </div>
+  
+        <div class="payment-options">
+          <label class="payment-option">
+          <input type="radio" name="paymentMethod" value="cash" checked>
+            <span><i class="fa-solid fa-money-bill-wave"></i> Cash on Delivery</span>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="paymentMethod" value="card">
+            <span><i class="fa-regular fa-credit-card"></i> Card (mock)</span>
+          </label>
+        </div>
+  
+        <div class="checkout-summary">
+          <div class="cart-row"><span>Subtotal</span><span id="checkoutSubtotal">$0.00</span></div>
+          <div class="cart-row"><span>Delivery</span><span id="checkoutDelivery">$0.00</span></div>
+          <div class="cart-row"><span>Tax</span><span id="checkoutTax">$0.00</span></div>
+          <div class="cart-row cart-total"><span>Total</span><span id="checkoutTotal">$0.00</span></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full" id="placeOrderBtn">
+          Place Order <i class="fa-solid fa-check"></i>
+        </button>
+      </form>
+  
+      <div class="checkout-success" id="checkoutSuccess" hidden>
+        <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+        <h3>Order Confirmed!</h3>
+        <p>Your order <strong id="orderIdLabel"></strong> is being prepared.</p>
+        <p class="success-note">We'll call you shortly to confirm delivery.</p>
+        <button class="btn btn-primary" id="successClose">Awesome, thanks!</button>
+      </div>
+    </div>
   </div>
-</section>
 
-
-
-
-<footer class="footer">
-  <div class="footer-content">
-    <div class="footer-logo">
-      <img src="./icon/Leonardo_Phoenix_Create_a_vibrant_logo_for_Marwan_Burger_Resta_2-removebg-preview (1).png" alt="Logo">
-    </div>
-    
-    <div class="radio">
-      <input value="1" name="rating" type="radio" id="rating-1" />
-      <label title="1 stars" for="rating-1">
-        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
-          <path
-            d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-          ></path>
-        </svg>
-      </label>
-    
-      <input value="2" name="rating" type="radio" id="rating-2" />
-      <label title="2 stars" for="rating-2">
-        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
-          <path
-            d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-          ></path>
-        </svg>
-      </label>
-    
-      <input value="3" name="rating" type="radio" id="rating-3" />
-      <label title="3 stars" for="rating-3">
-        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
-          <path
-            d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-          ></path>
-        </svg>
-      </label>
-    
-      <input value="4" name="rating" type="radio" id="rating-4" />
-      <label title="4 stars" for="rating-4">
-        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
-          <path
-            d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-          ></path>
-        </svg>
-      </label>
-    
-      <input value="5" name="rating" type="radio" id="rating-5" />
-      <label title="5 star" for="rating-5">
-        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
-          <path
-            d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-          ></path>
-        </svg>
-      </label>
-    </div>
-    
-
-
-    <div class="footer-social">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div>
-  <p class="footer-text">&copy; 2023 Berger Marwan. All rights reserved.</p>
-</footer>
-<script src="javascript/script.js"></script>
-
-
+  <!-- Cart + checkout script -->
+  <script src="./javascript/cart.js" defer></script>
+  <script src="./javascript/script.js"></script>
 </body>
 </html>

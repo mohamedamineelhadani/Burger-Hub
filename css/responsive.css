@@ -1,150 +1,619 @@
+/* ==========================================================================
+   BURGERHUB — Responsive Stylesheet
+   ========================================================================== */
 
-@media (max-width: 900px) {
-    nav ul {
-      display: none;
-      flex-direction: column;
-    }
-  
-    .menu-toggle {
-      display: block;
-    }
-  
-    nav ul.active {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #ff8800;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-    }  
+/* --------------------------------------------------------------------------
+   LARGE TABLETS / SMALL DESKTOPS (≤ 1100px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
 
-
-
-
-
-    .about {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        padding: 80px 0;
-        }
-        .about-content {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          max-width: 100%;
-          padding-left:6%;
-          color: #ffffff;
-          margin-left:none;
-          
-          
-          }
-          
-          
-          .about-image {
-          max-width: 50%;
-          margin-left:3%;
-          }
-        
-
-
-
-
-
-
-
-
-
-        .reservation-form{
-            background-color:#ff6600;
-            border-radius: 30px;
-            border-left: #ff0000 solid 10px;
-            border-right: #ff0000 solid 10px;
-            width: 100%;
-        
-          }
-          .reservation-form input,
-          .reservation-form textarea,
-          .reservation-form button {
-            width: 100%;
-            padding: 0.8rem;
-            margin: 0.5rem 0;
-            border: none;
-            border-radius: 5px;
-          }
-
-
-
-
-
-
-          
-          .contact-info {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-          }
-        
-        
-          .contact-form input, 
-          .contact-form textarea, 
-          .contact-form button {
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-          }
-          
-          .contact-form button {
-            background: #333;
-            border: #333 solid;
-            color: #fff;
-            font-size: 15px;
-            cursor: pointer;
-            transition: 0.3s;
-          }
-          
-          .contact-form button:hover {
-            background: red;
-            border: #ff0000 solid;
-          }
-
+  .about {
+    gap: 3rem;
   }
-@media (max-width: 1070px) {
-    #gallery {
-        background:#0d0c0c;
-        padding:25px 0;
-        width: 100%;
-      }
-      
-      .image-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-        width: 100%;
-      
-      }
-      
-      .gallery .image-item img {
-        width: 300px;
-        border: #ff6600 solid;
-        border-radius: 8px;
-        transition:0.5s;
-      }
-      
-      .gallery .image-item img:hover {
-        transform: scale(1.05);
-      }
-      
-  }  
+
+  .about-content p {
+    max-width: 100%;
+  }
+
+  .reservation-wrapper {
+    gap: 3rem;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact-info {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .info-item {
+    flex: 1 1 260px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TABLETS (≤ 900px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+
+  html {
+    scroll-padding-top: 80px;
+  }
+
+  /* ------- NAVIGATION ------- */
+  nav {
+    height: 72px;
+  }
+
+  nav.scrolled {
+    height: 66px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.75rem 0;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 22px 45px -18px rgba(0, 0, 0, .55);
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-14px);
+    pointer-events: none;
+    transition: opacity .35s ease, transform .35s cubic-bezier(.16, 1, .3, 1),
+                visibility .35s ease;
+  }
+
+  nav ul.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  nav ul li {
+    margin: 0;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 1rem 1.75rem;
+    border-radius: 0;
+    color: var(--text) !important;
+    font-size: 1rem;
+    border-left: 3px solid transparent;
+    transition: background .3s ease, border-color .3s ease,
+                color .3s ease, padding-left .3s ease;
+  }
+
+  nav ul li a::after {
+    display: none;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    background: rgba(255, 122, 0, .08);
+    border-left-color: var(--accent);
+    padding-left: 2.1rem;
+    color: var(--accent) !important;
+  }
+
+  /* ------- HERO ------- */
+  .hero {
+    background-attachment: scroll;
+    min-height: 92vh;
+    padding-top: 110px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.1rem, 8vw, 3rem);
+  }
+
+  .hero-buttons .btn {
+    padding: .85rem 1.7rem;
+    font-size: .9rem;
+  }
+
+  /* ------- ABOUT ------- */
+  .about {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    text-align: center;
+  }
+
+  .about-image {
+    max-width: 520px;
+    margin: 0 auto;
+    order: -1;
+  }
+
+  .about-image::after {
+    inset: 14px -14px -14px 14px;
+  }
+
+  .about-badge {
+    width: 100px;
+    height: 100px;
+    left: -12px;
+    bottom: -18px;
+  }
+
+  .about-badge strong {
+    font-size: 1.45rem;
+  }
+
+  .about-badge span {
+    font-size: .62rem;
+  }
+
+  .about-content h2,
+  .about-content p {
+    text-align: center;
+  }
+
+  .about-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-features {
+    align-items: center;
+  }
+
+  .about-features li {
+    justify-content: center;
+  }
+
+  /* ------- MENU ------- */
+  .menu-items {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.6rem;
+  }
+
+  /* ------- RESERVATIONS ------- */
+  .reservation-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .reservation-info {
+    text-align: center;
+  }
+
+  .reservation-info > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .reservation-perks {
+    align-items: center;
+  }
+
+  .reservation-perks li {
+    justify-content: center;
+  }
+
+  /* ------- GALLERY ------- */
+  .image-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2rem;
+  }
+
+  /* ------- CONTACT ------- */
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .info-item {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE (≤ 640px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  /* ------- NAV ------- */
+  nav {
+    padding: 0 1rem;
+  }
+
+  nav .logo h1 {
+    font-size: 1.22rem;
+  }
+
+  .logo-mark {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+    border-radius: 11px;
+  }
+
+  .theme-toggle,
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* ------- HERO ------- */
+  .hero {
+    min-height: 88vh;
+    padding: 100px 1.25rem 70px;
+  }
+
+  .hero-tag {
+    font-size: .68rem;
+    padding: 6px 15px;
+    letter-spacing: .1em;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(1.9rem, 9vw, 2.6rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-content > p {
+    font-size: .95rem;
+    margin-bottom: 1.9rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: .75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    padding-top: 1.6rem;
+  }
+
+  .hero-stats .divider {
+    display: none;
+  }
+
+  .hero-stats > div {
+    flex: 1 1 30%;
+    min-width: 80px;
+  }
+
+  .hero-stats strong {
+    font-size: 1.35rem;
+  }
+
+  .hero-stats span {
+    font-size: .66rem;
+    letter-spacing: .06em;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  /* ------- SECTIONS ------- */
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.7rem, 7.5vw, 2.2rem);
+  }
+
+  .section-tag {
+    font-size: .66rem;
+    padding: 5px 13px;
+    letter-spacing: .16em;
+  }
+
+  /* ------- ABOUT ------- */
+  .about {
+    gap: 2.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .about-image {
+    max-width: 100%;
+  }
+
+  .about-image::after {
+    display: none;
+  }
+
+  .about-badge {
+    width: 88px;
+    height: 88px;
+    left: 12px;
+    bottom: -14px;
+    animation: none;
+  }
+
+  .about-badge strong {
+    font-size: 1.25rem;
+  }
+
+  .about-badge span {
+    font-size: .58rem;
+    padding: 0 8px;
+  }
+
+  .about-content h2 {
+    font-size: clamp(1.7rem, 7.5vw, 2.2rem);
+  }
+
+  .about-content p {
+    font-size: .95rem;
+  }
+
+  .about-features li {
+    font-size: .9rem;
+  }
+
+  .btn {
+    padding: .85rem 1.7rem;
+    font-size: .9rem;
+  }
+
+  /* ------- MENU ------- */
+  .menu-items {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .menu-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .menu-body {
+    padding: 1.4rem 1.25rem 1.6rem;
+  }
+
+  .menu-body h3 {
+    font-size: 1.22rem;
+  }
+
+  /* ------- RESERVATIONS ------- */
+  .reservation-info h2 {
+    font-size: clamp(1.7rem, 7.5vw, 2.2rem);
+  }
+
+  .reservation-hours {
+    flex-direction: column;
+    text-align: center;
+    gap: .75rem;
+    padding: 1.25rem;
+  }
+
+  .reservation-form {
+    padding: 1.6rem 1.25rem 1.8rem;
+    border-radius: 22px;
+  }
+
+  .reservation-form h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .field input,
+  .field textarea {
+    padding: .85rem .9rem .85rem 2.7rem;
+    font-size: .9rem;
+  }
+
+  /* ------- TESTIMONIALS ------- */
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .testimonial {
+    padding: 2rem 1.5rem 1.6rem;
+    border-radius: 20px;
+  }
+
+  .quote-icon {
+    font-size: 2.3rem;
+    top: 1.1rem;
+    right: 1.2rem;
+  }
+
+  .testimonial > p {
+    font-size: .92rem;
+  }
+
+  .testimonial-author img {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* ------- GALLERY ------- */
+  .image-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .image-item {
+    border-radius: 16px;
+  }
+
+  .image-item::before {
+    width: 48px;
+    height: 48px;
+    font-size: .9rem;
+  }
+
+  /* ------- CONTACT ------- */
+  .info-item {
+    padding: 1rem 1.1rem;
+    gap: .9rem;
+  }
+
+  .info-item > i {
+    width: 42px;
+    height: 42px;
+    font-size: .95rem;
+    border-radius: 12px;
+  }
+
+  .info-item strong {
+    font-size: .74rem;
+  }
+
+  .info-item p {
+    font-size: .9rem;
+  }
+
+  .contact-form {
+    padding: 1.6rem 1.25rem 1.8rem;
+    border-radius: 22px;
+  }
+
+  /* ------- FOOTER ------- */
+  .footer-content {
+    gap: 1.5rem;
+  }
+
+  .footer-logo img {
+    width: 120px;
+  }
+
+  .rating label {
+    font-size: 1.2rem;
+  }
+
+  .footer-social a {
+    width: 42px;
+    height: 42px;
+    font-size: .92rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: .4rem;
+    margin-top: 2rem;
+    font-size: .78rem;
+  }
+
+  /* ------- BACK TO TOP ------- */
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+    font-size: .9rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SMALL MOBILE (≤ 400px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 400px) {
+
+  .hero-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero-stats > div {
+    flex: 1 1 100%;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: .9rem;
+  }
+
+  .about-badge {
+    width: 78px;
+    height: 78px;
+  }
+
+  .about-badge strong {
+    font-size: 1.1rem;
+  }
+
+  .about-badge span {
+    font-size: .54rem;
+  }
+
+  .btn {
+    padding: .8rem 1.4rem;
+    font-size: .86rem;
+  }
+
+  .rating label {
+    font-size: 1.05rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   LANDSCAPE MOBILE
+   -------------------------------------------------------------------------- */
+@media (max-height: 520px) and (orientation: landscape) {
+
+  .hero {
+    min-height: auto;
+    padding: 120px 1.5rem 60px;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  .hero-stats {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   FINE POINTER / HOVER CAPABLE DEVICES ONLY
+   -------------------------------------------------------------------------- */
+@media (hover: none) {
+
+  .menu-item:hover,
+  .testimonial:hover,
+  .info-item:hover {
+    transform: none;
+  }
+
+  .image-item::before {
+    display: none;
+  }
+}
